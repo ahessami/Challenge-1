@@ -69,7 +69,7 @@ function digitalSum(num) {// 1337
   	return num;
   }
 
-  return digitalSum(num % 10) + digitalSum(Math.floor(num/10));
+  return num % 10 + digitalSum(Math.floor(num/10));
   //					7             			133  (133.7)
   //					3                       13   (13.3)
   //                    3                       1    (1.3)
