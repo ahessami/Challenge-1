@@ -15,6 +15,13 @@ function print(x) {
 
 function billTotal(total) {
 	// write code here
+	var totalWTax = (total * 0.095);
+	total = total + (total * .15);
+
+	total = total + totalWTax;
+
+
+	return "Your total comes to $" + Math.round(total * 100) / 100;
 }
 
 // billTotal(21.55); // "Your total comes to $26.83"
@@ -35,6 +42,8 @@ function billTotal(total) {
 
 function animalNoise(animal, emotion) {
 // TODO: your code here
+	return animal + " is " + emotion;
+
 }
 
 
@@ -54,6 +63,16 @@ function animalNoise(animal, emotion) {
 // What should digitalSum of a single-digit number 
 // return, e.g. digitalSum(8)?
 
-function digitalSum(num) {
+function digitalSum(num) {// 1337
   // TODO: your code here
+  if(num % 10 === num) { // single digit mod 10 returns itself
+  	return num;
+  }
+
+  return digitalSum(num % 10) + digitalSum(Math.floor(num/10));
+  //					7             			133  (133.7)
+  //					3                       13   (13.3)
+  //                    3                       1    (1.3)
+  //                    1
+  //                    14
 }
